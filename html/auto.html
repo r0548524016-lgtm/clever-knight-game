@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>הפרש החכם - כניסה והרשמה</title>
+    <link rel="stylesheet" href="../css/auto.css">
+</head>
+
+<body class="auth-page-body">
+
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <span id="signin-tab" class="active" onclick="toggleAuth('signin')">התחברות</span>
+            <span id="signup-tab" onclick="toggleAuth('signup')">הרשמה</span>
+        </div>
+
+        <div id="signin-form">
+            <h1>התחברות</h1>
+            <form id="signinForm" autocomplete="off">
+                <input type="email" id="signinEmail" placeholder="אימייל" required>
+                <input type="password" id="signinPassword" placeholder="סיסמה" required>
+                <button type="submit">התחבר</button>
+            </form>
+        </div>
+
+        <div id="signup-form" style="display: none;">
+            <h1>הרשמה</h1>
+            <form id="signupForm" autocomplete="off">
+                <input type="text" id="signupName" placeholder="שם מלא" required>
+                <input type="email" id="signupEmail" placeholder="אימייל חדש" required>
+                <input type="password" id="signupPassword" placeholder="סיסמה חדשה" required>
+                <input type="password" id="signUpAgainPassword" placeholder="אימות סיסמה" required>
+                <button type="submit">הירשם</button>
+            </form>
+        </div>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="../js/auto.js"></script>
+</body>
+
+</html>

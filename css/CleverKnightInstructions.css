@@ -1,0 +1,96 @@
+.rules-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050a15;
+    padding: 10px;
+    font-family: 'Assistant', sans-serif;
+}
+
+.frosted-panel {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 191, 255, 0.15);
+    padding: 50px;
+    color: #fff;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.panel-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.panel-header h1 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #00bfff;
+    margin: 0;
+}
+
+.sub-glow {
+    font-size: 1.25rem;
+    color: rgba(0, 191, 255, 0.5);
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.rule-block {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 20px;
+}
+
+.rule-block:last-child {
+    border-bottom: none;
+}
+
+.rule-block h3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    color: #00bfff;
+    margin-bottom: 10px;
+}
+
+.rule-block h3 span {
+    font-size: 1rem;
+    background: rgba(0, 191, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+}
+
+.rule-block p {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding-right: 45px;
+}
+
+.glass-btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 14px 40px;
+    background: transparent;
+    border: 1px solid #00bfff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.glass-btn:hover {
+    background: rgba(0, 191, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,294 @@
+:root {
+    --primary: #38bdf8;
+    --accent: #f59e0b;
+    --bg: #020617;
+    --glass: rgba(15, 23, 42, 0.85);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Assistant', sans-serif;
+    background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#timer {
+    background: var(--glass);
+    border: 2px solid var(--accent);
+    padding: 10px 25px;
+    position: absolute;
+    width: 3.5%;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: bold;
+    top: 10px;
+    left: 25%;
+}
+
+#log-out {
+    background: var(--glass);
+    border: 2px solid var(--accent);
+    padding: 10px 15px;
+    position: absolute;
+    width: 4%;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--accent);
+    font-weight: bold;
+    top: 10px;
+    left: 18%;
+}
+
+#restart{
+    background: var(--glass);
+    border: 2px solid var(--accent);
+    padding: 10px 15px;
+    position: absolute;
+    width: 5%;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--accent);
+    font-weight: bold;
+    top: 10px;
+    left: 10%;
+}
+.game-container {
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+.players-bar {
+    width: 90%;
+    position: fixed;
+    top: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    left: 5%;
+}
+
+.player-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: var(--glass);
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.5rem;
+}
+
+.player-box.active {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 20px var(--primary);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    background: rgba(56, 189, 248, 0.2);
+}
+
+.player-img {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+}
+
+#game-arena {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    gap: 1px;
+}
+
+.gameArea {
+    background-color: rgba(54, 79, 107, 0.8);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.winArea {
+    background-color: rgba(0, 102, 204, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0, 191, 255, 0.3);
+}
+
+.basePlace {
+    background-color: rgba(28, 43, 64, 0.9);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.player2Piece {
+    background-image: url('../images/player2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+}
+
+.player1Piece {
+    background-image: url('../images/player1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+}
+
+.highlight {
+    box-shadow: inset 0 0 15px #ffffff;
+    animation: glow-border 1s infinite alternate;
+}
+
+@keyframes glow-border {
+    0% {
+        box-shadow: 0 0 5px red, inset 0 0 5px red;
+        border: 2px, red;
+    }
+
+    100% {
+        border: 2px, red;
+        box-shadow: 0 0 20px red, inset 0 0 20px red;
+    }
+}
+
+.selectedPiece {
+    animation: selectedPiece 1s infinite alternate;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+}
+
+@keyframes selectedPiece {
+    0% {
+        box-shadow: 0 0 5px rgb(34, 255, 86), inset 0 0 5px rgb(34, 255, 86);
+        border: 3px, rgb(34, 255, 86);
+    }
+
+    100% {
+        border: 3px, rgb(34, 255, 86);
+        box-shadow: 0 0 30px rgb(34, 255, 86), inset 0 0 20px rgb(34, 255, 86);
+    }
+}
+
+.auth-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.auth-section.active {
+    display: block;
+    opacity: 1;
+}
+
+.tab.active {
+    border-bottom: 2px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.winer {
+    width: 20%;
+    height: 25%;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    background: var(--glass);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 3rem;
+    animation: selectedPiece 1s infinite alternate;
+    bottom: 15px;
+    padding-top: 3rem;
+    line-height: 3.5rem;
+
+}
+
+.victory-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 11, 24, 0.92);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.victory-card {
+    background: linear-gradient(145deg, #0f3d66, #091b33);
+    border: 2px solid #4fc3f7;
+    border-radius: 20px;
+    padding: 40px 60px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 40px rgba(79, 195, 247, 0.5);
+    animation: popIn 0.6s ease-out;
+    z-index: 2;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#confetti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#victory-text {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הפרש החכם - זירת המשחק</title>
+    <link rel="stylesheet" href="../css/CleverKnightGame.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+        <header>
+            <h2>הפרש החכם</h2>
+        </header>
+
+        <div id="timer"></div>
+        <div id="log-out">יציאה</div>
+        <div id="restart">אפס משחק</div>
+        <div class="players-bar">
+            <div class="player-box">
+                <div class="player-box" id="p1-display">
+                    <span class="player-name"></span>
+                </div>
+                <img class="player-img" src="../images/player1.png" alt="חייל שחקן 1">
+                <div>
+                    <p>נצחונות</p>
+                    <div id="wins1" class="player-wins"></div>
+                </div>
+            </div>
+            <div class="player-box">
+                <div class="player-box" id="p2-display">
+                    <span class="player-name"></span>
+                </div>
+                <img class="player-img" src="../images/player2.png" alt="חייל שחקן 2">
+                <div>
+                    <p>נצחונות</p>
+                    <div id="wins2" class="player-wins"></div>
+                </div>
+            </div>
+
+        </div>
+        <div id="board"></div>
+    </div>
+    <div id="victory-overlay" class="victory-overlay">
+        <div class="victory-card">
+            <div id="victory-text"></div>
+        </div>
+        <canvas id="confetti"></canvas>
+    </div>
+
+    <audio id="win-sound" src="../sounds/מחיאות כפיים (1).mp3" preload="auto"></audio>
+
+    <script src="../js/CleverKnightGame.js"></script>
+
+</body>
+
+</html>
